@@ -1,5 +1,5 @@
 ﻿Public Class Main
-    Private Sub TampilkanFormKePanel(form As Form)
+    Public Sub TampilkanFormKePanel(form As Form)
         PanelKonten.Controls.Clear()
         form.TopLevel = False
         form.FormBorderStyle = FormBorderStyle.None

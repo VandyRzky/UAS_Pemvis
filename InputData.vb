@@ -28,11 +28,49 @@ Public Class InputData
         txtNIM.Focus()
     End Sub
 
+    Public Sub editLoad()
+        CMD = New MySqlCommand("SELECT * FROM mahasiswatabel WHERE nim = @nim", CONN)
+        CMD.Parameters.AddWithValue("@nim", nim)
+        RD = CMD.ExecuteReader
+
+        If RD.Read() Then
+            txtNIM.Text = RD("nim").ToString()
+            txtNama.Text = RD("nama").ToString()
+            txtIPK.Text = RD("ipk").ToString()
+            cbProdi.Text = RD("prodi").ToString()
+
+            Dim kelamin As String = RD("kelamin").ToString()
+            If kelamin = "Laki-laki" Then
+                rbLaki.Checked = True
+            ElseIf kelamin = "Perempuan" Then
+                rbPerem.Checked = True
+            End If
+
+            Dim ulang As String = RD("ulang").ToString()
+            If ulang = "Ya" Then
+                rbYa.Checked = True
+            ElseIf ulang = "Tidak" Then
+                rbTdk.Checked = True
+            End If
+
+            Dim namaFoto As String = RD("foto").ToString()
+            Dim pathFoto As String = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\" & namaFoto
+            If IO.File.Exists(pathFoto) Then
+                PictureBox1.Image = Image.FromFile(pathFoto)
+            End If
+        Else
+            MsgBox("Data tidak ditemukan untuk NIM: " & nim, MsgBoxStyle.Exclamation)
+        End If
+
+        RD.Close()
+    End Sub
+
     Public Sub tipeForm()
         If nim = "" Then
             btnEdit.Enabled = False
             btnSimpan.Enabled = True
         Else
+            editLoad()
             btnEdit.Enabled = True
             btnSimpan.Enabled = False
         End If
@@ -133,6 +171,17 @@ Public Class InputData
             Dim saveFolder As String = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\"
 
             newFilePath = IO.Path.Combine(saveFolder, newFileName)
+        End If
+    End Sub
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+    End Sub
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        If nim = "" Then
+            clear()
+        Else
+            Dim parentForm As Main = CType(Me.ParentForm, Main)
+            parentForm.TampilkanFormKePanel(InformasiKelulusan)
         End If
     End Sub
 End Class
