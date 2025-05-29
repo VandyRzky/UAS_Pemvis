@@ -1,0 +1,16 @@
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.vbproj.AssemblyReference.cache
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.InformasiKelulusan.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.InputData.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.Main.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.Resources.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.vbproj.GenerateResource.cache
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.vbproj.CoreCompileInputs.cache
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\bin\Debug\UASNET.exe.config
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\bin\Debug\UASNET.exe
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\bin\Debug\UASNET.pdb
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\bin\Debug\UASNET.xml
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\bin\Debug\mysql.data.dll
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.vbproj.Up2Date
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.exe
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.xml
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.pdb
