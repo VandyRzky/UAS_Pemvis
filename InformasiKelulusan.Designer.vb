@@ -36,9 +36,12 @@ Partial Class InformasiKelulusan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnPrev = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
+        Me.kosongpic = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lbkosong = New System.Windows.Forms.Label()
+        CType(Me.kosongpic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -170,17 +173,6 @@ Partial Class InformasiKelulusan
         Me.btnHapus.Text = "Hapus"
         Me.btnHapus.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.UASNET.My.Resources.Resources.null_profile
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 64)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 141)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        '
         'btnPrev
         '
         Me.btnPrev.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -203,11 +195,43 @@ Partial Class InformasiKelulusan
         Me.btnNext.Text = "➡️"
         Me.btnNext.UseVisualStyleBackColor = True
         '
+        'kosongpic
+        '
+        Me.kosongpic.Image = Global.UASNET.My.Resources.Resources.empty
+        Me.kosongpic.Location = New System.Drawing.Point(150, 150)
+        Me.kosongpic.Name = "kosongpic"
+        Me.kosongpic.Size = New System.Drawing.Size(145, 166)
+        Me.kosongpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.kosongpic.TabIndex = 37
+        Me.kosongpic.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.UASNET.My.Resources.Resources.null_profile
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 64)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 141)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
+        'lbkosong
+        '
+        Me.lbkosong.AutoSize = True
+        Me.lbkosong.Location = New System.Drawing.Point(134, 327)
+        Me.lbkosong.Name = "lbkosong"
+        Me.lbkosong.Size = New System.Drawing.Size(173, 16)
+        Me.lbkosong.TabIndex = 38
+        Me.lbkosong.Text = "Belum ada data mahasiswa"
+        '
         'InformasiKelulusan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(448, 535)
+        Me.Controls.Add(Me.lbkosong)
+        Me.Controls.Add(Me.kosongpic)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.txtIPK)
@@ -227,6 +251,7 @@ Partial Class InformasiKelulusan
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "InformasiKelulusan"
         Me.Text = "InformasiKelulusan"
+        CType(Me.kosongpic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -250,4 +275,6 @@ Partial Class InformasiKelulusan
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnPrev As Button
     Friend WithEvents btnNext As Button
+    Friend WithEvents kosongpic As PictureBox
+    Friend WithEvents lbkosong As Label
 End Class

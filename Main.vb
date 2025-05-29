@@ -1,4 +1,7 @@
-﻿Public Class Main
+﻿Imports MySql.Data.MySqlClient
+Imports System.IO
+
+Public Class Main
     Public Sub TampilkanFormKePanel(form As Form)
         PanelKonten.Controls.Clear()
         form.TopLevel = False
@@ -11,6 +14,7 @@
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TampilkanFormKePanel(New InputData(""))
+        HapusFotoTidakTerpakai()
     End Sub
 
     Private Sub lblInfo_Click(sender As Object, e As EventArgs) Handles lblInfo.Click
@@ -25,5 +29,35 @@
 
     Private Sub BukaFormInputDenganNIM(nim As String)
         TampilkanFormKePanel(New InputData(nim))
+    End Sub
+
+    Public Sub HapusFotoTidakTerpakai()
+        Dim folderPath As String = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\"
+        Dim daftarFotoDB As New HashSet(Of String)
+
+        Dim CMD As New MySqlCommand("SELECT foto FROM mahasiswatabel", CONN)
+        Dim RD As MySqlDataReader = CMD.ExecuteReader()
+        While RD.Read()
+            If Not IsDBNull(RD("foto")) Then
+                daftarFotoDB.Add(RD("foto").ToString())
+            End If
+        End While
+        RD.Close()
+
+        For Each filePath As String In Directory.GetFiles(folderPath)
+            Dim fileName As String = Path.GetFileName(filePath)
+
+            If fileName.ToLower() = "null-profile.png" Then
+                Continue For
+            End If
+
+            If Not daftarFotoDB.Contains(fileName) Then
+                Try
+                    File.Delete(filePath)
+                Catch ex As Exception
+                    MsgBox("Gagal menghapus file: " & fileName & vbCrLf & ex.Message)
+                End Try
+            End If
+        Next
     End Sub
 End Class

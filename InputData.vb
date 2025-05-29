@@ -7,7 +7,9 @@ Public Class InputData
     Dim ulang As String
     Dim prodi As String
     Dim filePath As String
+    Dim oldFilePath As String
     Dim newFilePath As String
+    Dim oldFileName As String
     Dim newFileName As String
     Public Sub New(nimInput As String)
         InitializeComponent()
@@ -23,7 +25,9 @@ Public Class InputData
         rbTdk.Checked = False
         filePath = ""
         newFilePath = ""
+        oldFilePath = ""
         newFileName = ""
+        oldFileName = ""
         PictureBox1.Image = Image.FromFile("D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\null-profile.png")
         txtNIM.Focus()
     End Sub
@@ -53,10 +57,10 @@ Public Class InputData
                 rbTdk.Checked = True
             End If
 
-            Dim namaFoto As String = RD("foto").ToString()
-            Dim pathFoto As String = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\" & namaFoto
-            If IO.File.Exists(pathFoto) Then
-                PictureBox1.Image = Image.FromFile(pathFoto)
+            oldFileName = RD("foto").ToString()
+            oldFilePath = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\upload\" & oldFileName
+            If IO.File.Exists(oldFilePath) Then
+                PictureBox1.Image = Image.FromFile(oldFilePath)
             End If
         Else
             MsgBox("Data tidak ditemukan untuk NIM: " & nim, MsgBoxStyle.Exclamation)
@@ -174,8 +178,38 @@ Public Class InputData
         End If
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If cekInput() Or getKelamin() Or getUlang() Or getProdi() Or newFileName = "" Then
+            MsgBox("Input tidak boleh kosong")
+            Return
+        End If
+        CMD = New MySqlCommand("SELECT * FROM mahasiswatabel WHERE nim = @nimBaru AND nim <> @nimLama", CONN)
+        CMD.Parameters.AddWithValue("@nimBaru", txtNIM.Text)
+        CMD.Parameters.AddWithValue("@nimLama", nim)
+        RD = CMD.ExecuteReader()
+        If RD.HasRows Then
+            RD.Close()
+            MsgBox("NIM Sudah dipakai")
+        Else
+            RD.Close()
+            CMD = New MySqlCommand("UPDATE mahasiswatabel SET nim = @nimbaru, nama = @nama, kelamin = @kelamin, prodi = @prodi, ulang = @ulang, ipk = @ipk, foto = @foto  WHERE nim = @nim", CONN)
+            CMD.Parameters.AddWithValue("@nim", nim)
+            CMD.Parameters.AddWithValue("@nimbaru", txtNIM.Text)
+            CMD.Parameters.AddWithValue("@nama", txtNama.Text)
+            CMD.Parameters.AddWithValue("@kelamin", jenis)
+            CMD.Parameters.AddWithValue("@prodi", cbProdi.Text)
+            CMD.Parameters.AddWithValue("@ulang", ulang)
+            CMD.Parameters.AddWithValue("@ipk", txtIPK.Text)
+            CMD.Parameters.AddWithValue("@foto", newFileName)
+            CMD.ExecuteNonQuery()
+            IO.File.Copy(filePath, newFilePath, True)
 
+            clear()
+            Dim parentForm As Main = CType(Me.ParentForm, Main)
+            parentForm.TampilkanFormKePanel(InformasiKelulusan)
+        End If
     End Sub
+
+
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         If nim = "" Then
             clear()
