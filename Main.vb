@@ -60,4 +60,8 @@ Public Class Main
             End If
         Next
     End Sub
+
+    Private Sub lblGrafik_Click(sender As Object, e As EventArgs) Handles lblGrafik.Click
+        TampilkanFormKePanel(GrafikKelulusan)
+    End Sub
 End Class

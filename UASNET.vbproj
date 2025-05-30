@@ -56,6 +56,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.vb" />
+    <Compile Include="GrafikKelulusan.Designer.vb">
+      <DependentUpon>GrafikKelulusan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GrafikKelulusan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InformasiKelulusan.Designer.vb">
       <DependentUpon>InformasiKelulusan.vb</DependentUpon>
     </Compile>
@@ -113,6 +120,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GrafikKelulusan.resx">
+      <DependentUpon>GrafikKelulusan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformasiKelulusan.resx">
       <DependentUpon>InformasiKelulusan.vb</DependentUpon>
     </EmbeddedResource>

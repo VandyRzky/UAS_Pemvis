@@ -14,3 +14,4 @@ D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.vbproj.Up2
 D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.exe
 D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.xml
 D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.pdb
+D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\obj\Debug\UASNET.GrafikKelulusan.resources
