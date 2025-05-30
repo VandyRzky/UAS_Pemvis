@@ -95,4 +95,34 @@ Public Class InformasiKelulusan
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        PrintDocument1.DefaultPageSettings.Landscape = True
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.ShowDialog()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim g As Graphics = e.Graphics
+        Dim fontTitle As New Font("Times New Roman", 24, FontStyle.Bold)
+        Dim fontSubTitle As New Font("Times New Roman", 20, FontStyle.Regular)
+        Dim fontText As New Font("Times New Roman", 16)
+        Dim margin As Integer = 50
+
+        Dim pageRect As New Rectangle(margin, margin, e.PageBounds.Width - (2 * margin), e.PageBounds.Height - (2 * margin))
+        g.DrawRectangle(Pens.Black, pageRect)
+
+        Dim y As Integer = margin + 60
+
+        g.DrawString("UNIVERSITAS LINGKARAN TERBAGI", fontTitle, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 260, y))
+        y += 80
+        g.DrawString("menyatakan bahwa", fontText, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 150, y))
+        y += 60
+        g.DrawString(txtNama.Text.ToUpper, fontSubTitle, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 100, y))
+        y += 50
+        g.DrawString("telah berhasil menyelesaikan Program Pendidikan Sarjana", fontText, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 300, y))
+        y += 50
+        g.DrawString("Program Studi " & txtProdi.Text, fontSubTitle, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 150, y))
+    End Sub
+
+
 End Class

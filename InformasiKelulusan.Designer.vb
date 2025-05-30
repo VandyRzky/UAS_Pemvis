@@ -22,6 +22,7 @@ Partial Class InformasiKelulusan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InformasiKelulusan))
         Me.txtIPK = New System.Windows.Forms.TextBox()
         Me.txtUlang = New System.Windows.Forms.TextBox()
         Me.txtProdi = New System.Windows.Forms.TextBox()
@@ -41,6 +42,9 @@ Partial Class InformasiKelulusan
         Me.kosongpic = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbkosong = New System.Windows.Forms.Label()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.kosongpic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -155,7 +159,7 @@ Partial Class InformasiKelulusan
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(83, 494)
+        Me.btnEdit.Location = New System.Drawing.Point(27, 494)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(84, 29)
@@ -165,7 +169,7 @@ Partial Class InformasiKelulusan
         '
         'btnHapus
         '
-        Me.btnHapus.Location = New System.Drawing.Point(282, 494)
+        Me.btnHapus.Location = New System.Drawing.Point(334, 494)
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(94, 29)
@@ -208,7 +212,7 @@ Partial Class InformasiKelulusan
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.UASNET.My.Resources.Resources.null_profile
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 64)
+        Me.PictureBox1.Location = New System.Drawing.Point(25, 64)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(114, 141)
@@ -225,11 +229,35 @@ Partial Class InformasiKelulusan
         Me.lbkosong.TabIndex = 38
         Me.lbkosong.Text = "Belum ada data mahasiswa"
         '
+        'PrintDocument1
+        '
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(162, 494)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(109, 29)
+        Me.Button1.TabIndex = 39
+        Me.Button1.Text = "Print Ijazah"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'InformasiKelulusan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(448, 535)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbkosong)
         Me.Controls.Add(Me.kosongpic)
         Me.Controls.Add(Me.btnNext)
@@ -277,4 +305,7 @@ Partial Class InformasiKelulusan
     Friend WithEvents btnNext As Button
     Friend WithEvents kosongpic As PictureBox
     Friend WithEvents lbkosong As Label
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents Button1 As Button
 End Class

@@ -26,7 +26,6 @@ Partial Class Main
         Me.lblInfo = New System.Windows.Forms.Label()
         Me.lblInput = New System.Windows.Forms.Label()
         Me.lblGrafik = New System.Windows.Forms.Label()
-        Me.lblIjazah = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'PanelKonten
@@ -64,21 +63,11 @@ Partial Class Main
         Me.lblGrafik.TabIndex = 3
         Me.lblGrafik.Text = "Grafik Kelulusan"
         '
-        'lblIjazah
-        '
-        Me.lblIjazah.AutoSize = True
-        Me.lblIjazah.Location = New System.Drawing.Point(21, 244)
-        Me.lblIjazah.Name = "lblIjazah"
-        Me.lblIjazah.Size = New System.Drawing.Size(42, 16)
-        Me.lblIjazah.TabIndex = 4
-        Me.lblIjazah.Text = "Ijazah"
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(705, 516)
-        Me.Controls.Add(Me.lblIjazah)
         Me.Controls.Add(Me.lblGrafik)
         Me.Controls.Add(Me.lblInput)
         Me.Controls.Add(Me.lblInfo)
@@ -95,6 +84,5 @@ Partial Class Main
     Friend WithEvents lblInfo As Label
     Friend WithEvents lblInput As Label
     Friend WithEvents lblGrafik As Label
-    Friend WithEvents lblIjazah As Label
 
 End Class

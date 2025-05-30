@@ -13,7 +13,9 @@ Public Class Main
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TampilkanFormKePanel(New InputData(""))
+        Dim infoForm As New InformasiKelulusan()
+        AddHandler infoForm.DataDipilih, AddressOf BukaFormInputDenganNIM
+        TampilkanFormKePanel(infoForm)
         HapusFotoTidakTerpakai()
     End Sub
 

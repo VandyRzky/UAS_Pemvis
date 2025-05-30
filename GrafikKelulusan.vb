@@ -53,4 +53,7 @@ Public Class GrafikKelulusan
         ChartIPK.Series.Add(series)
     End Sub
 
+    Private Sub Chart1_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
