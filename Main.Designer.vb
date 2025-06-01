@@ -33,7 +33,7 @@ Partial Class Main
         Me.PanelKonten.Location = New System.Drawing.Point(204, 2)
         Me.PanelKonten.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PanelKonten.Name = "PanelKonten"
-        Me.PanelKonten.Size = New System.Drawing.Size(497, 503)
+        Me.PanelKonten.Size = New System.Drawing.Size(528, 555)
         Me.PanelKonten.TabIndex = 0
         '
         'lblInfo
@@ -67,7 +67,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(705, 516)
+        Me.ClientSize = New System.Drawing.Size(736, 558)
         Me.Controls.Add(Me.lblGrafik)
         Me.Controls.Add(Me.lblInput)
         Me.Controls.Add(Me.lblInfo)

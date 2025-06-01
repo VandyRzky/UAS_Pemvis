@@ -134,11 +134,27 @@ Public Class InputData
         'Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
         koneksi()
         tipeForm()
+
+        cbProdi.DropDownStyle = ComboBoxStyle.DropDownList
+        txtNIM.MaxLength = 10
+        txtIPK.MaxLength = 4
     End Sub
+
+    Private Function cekIPK()
+        'Dim ipk As Double = Double.Parse(txtIPK.Text)
+        If Double.Parse(txtIPK.Text) > 4.0 Then
+            Return True
+        End If
+        Return False
+    End Function
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         If cekInput() Or getKelamin() Or getUlang() Or getProdi() Or newFileName = "" Then
             MsgBox("Input tidak boleh kosong")
+            Return
+        End If
+        If cekIPK() Then
+            MsgBox("IPK tidak boleh lebih dari 4")
             Return
         End If
         If cekNIM() Then
@@ -182,6 +198,10 @@ Public Class InputData
             MsgBox("Input tidak boleh kosong")
             Return
         End If
+        If cekIPK() Then
+            MsgBox("IPK tidak boleh lebih dari 4")
+            Return
+        End If
         CMD = New MySqlCommand("SELECT * FROM mahasiswatabel WHERE nim = @nimBaru AND nim <> @nimLama", CONN)
         CMD.Parameters.AddWithValue("@nimBaru", txtNIM.Text)
         CMD.Parameters.AddWithValue("@nimLama", nim)
@@ -216,6 +236,24 @@ Public Class InputData
         Else
             Dim parentForm As Main = CType(Me.ParentForm, Main)
             parentForm.TampilkanFormKePanel(InformasiKelulusan)
+        End If
+    End Sub
+
+    Private Sub txtNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNama.KeyPress
+        ' Hanya izinkan huruf, backspace dan spasi
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtIPK_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIPK.KeyPress
+
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> "."c Then
+            e.Handled = True
+        End If
+
+        If e.KeyChar = "."c AndAlso txtIPK.Text.Contains(".") Then
+            e.Handled = True
         End If
     End Sub
 End Class
