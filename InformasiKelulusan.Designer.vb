@@ -37,14 +37,14 @@ Partial Class InformasiKelulusan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
-        Me.btnPrev = New System.Windows.Forms.Button()
-        Me.btnNext = New System.Windows.Forms.Button()
-        Me.kosongpic = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbkosong = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.kosongpic = New System.Windows.Forms.PictureBox()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrev = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.kosongpic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -177,49 +177,6 @@ Partial Class InformasiKelulusan
         Me.btnHapus.Text = "Hapus"
         Me.btnHapus.UseVisualStyleBackColor = True
         '
-        'btnPrev
-        '
-        Me.btnPrev.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrev.Location = New System.Drawing.Point(34, 12)
-        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(38, 37)
-        Me.btnPrev.TabIndex = 35
-        Me.btnPrev.Text = "⬅️"
-        Me.btnPrev.UseVisualStyleBackColor = True
-        '
-        'btnNext
-        '
-        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.Location = New System.Drawing.Point(381, 12)
-        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(38, 37)
-        Me.btnNext.TabIndex = 36
-        Me.btnNext.Text = "➡️"
-        Me.btnNext.UseVisualStyleBackColor = True
-        '
-        'kosongpic
-        '
-        Me.kosongpic.Image = Global.UASNET.My.Resources.Resources.empty
-        Me.kosongpic.Location = New System.Drawing.Point(150, 150)
-        Me.kosongpic.Name = "kosongpic"
-        Me.kosongpic.Size = New System.Drawing.Size(145, 166)
-        Me.kosongpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.kosongpic.TabIndex = 37
-        Me.kosongpic.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.UASNET.My.Resources.Resources.null_profile
-        Me.PictureBox1.Location = New System.Drawing.Point(25, 64)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 141)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        '
         'lbkosong
         '
         Me.lbkosong.AutoSize = True
@@ -251,6 +208,52 @@ Partial Class InformasiKelulusan
         Me.Button1.TabIndex = 39
         Me.Button1.Text = "Print Ijazah"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'kosongpic
+        '
+        Me.kosongpic.Image = Global.UASNET.My.Resources.Resources.empty
+        Me.kosongpic.Location = New System.Drawing.Point(150, 150)
+        Me.kosongpic.Name = "kosongpic"
+        Me.kosongpic.Size = New System.Drawing.Size(145, 166)
+        Me.kosongpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.kosongpic.TabIndex = 37
+        Me.kosongpic.TabStop = False
+        '
+        'btnNext
+        '
+        Me.btnNext.BackgroundImage = Global.UASNET.My.Resources.Resources.arrow_right
+        Me.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.Location = New System.Drawing.Point(381, 12)
+        Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(38, 37)
+        Me.btnNext.TabIndex = 36
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'btnPrev
+        '
+        Me.btnPrev.BackgroundImage = Global.UASNET.My.Resources.Resources.arrow_left1
+        Me.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPrev.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrev.Location = New System.Drawing.Point(34, 12)
+        Me.btnPrev.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(38, 37)
+        Me.btnPrev.TabIndex = 35
+        Me.btnPrev.Text = "⬅️"
+        Me.btnPrev.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.UASNET.My.Resources.Resources.null_profile
+        Me.PictureBox1.Location = New System.Drawing.Point(25, 64)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 141)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
         '
         'InformasiKelulusan
         '

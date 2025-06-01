@@ -113,6 +113,23 @@ Public Class InformasiKelulusan
 
         Dim y As Integer = margin + 60
 
+        Dim logoPath As String = "D:\Kuliah\Semester 4\Pemrograman Visual\Kelas\UASNET\assets\Logo.png"
+        If IO.File.Exists(logoPath) Then
+            Dim pageWidth As Integer = e.PageBounds.Width
+            Dim logo As Image = Image.FromFile(logoPath)
+
+            Dim logoWidth As Integer = 150
+            Dim logoHeight As Integer = 150
+
+            Dim posX As Integer = (pageWidth - logoWidth) \ 2
+            Dim posY As Integer = 50 ' Jarak dari atas halaman
+
+            ' Gambar logo di tengah atas
+            g.DrawImage(logo, posX, posY, logoWidth, logoHeight)
+        End If
+
+        y += 150
+
         g.DrawString("UNIVERSITAS LINGKARAN TERBAGI", fontTitle, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 260, y))
         y += 80
         g.DrawString("menyatakan bahwa", fontText, Brushes.Black, New PointF(e.PageBounds.Width \ 2 - 150, y))

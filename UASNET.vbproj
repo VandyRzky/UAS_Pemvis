@@ -153,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\empty.jpg" />
+    <None Include="assets\Logo.png" />
+    <None Include="assets\arrow-right.png" />
+    <None Include="assets\arrow-left.png" />
     <Content Include="upload\null-profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
