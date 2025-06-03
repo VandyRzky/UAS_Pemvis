@@ -27,15 +27,16 @@ Partial Class Main
         Me.lblInput = New System.Windows.Forms.Label()
         Me.lblGrafik = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblKeluar = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelKonten
         '
-        Me.PanelKonten.Location = New System.Drawing.Point(204, 2)
+        Me.PanelKonten.Location = New System.Drawing.Point(250, 4)
         Me.PanelKonten.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PanelKonten.Name = "PanelKonten"
-        Me.PanelKonten.Size = New System.Drawing.Size(528, 555)
+        Me.PanelKonten.Size = New System.Drawing.Size(461, 552)
         Me.PanelKonten.TabIndex = 0
         '
         'lblInfo
@@ -78,11 +79,23 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
+        'lblKeluar
+        '
+        Me.lblKeluar.AutoSize = True
+        Me.lblKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblKeluar.Location = New System.Drawing.Point(65, 493)
+        Me.lblKeluar.Name = "lblKeluar"
+        Me.lblKeluar.Size = New System.Drawing.Size(63, 20)
+        Me.lblKeluar.TabIndex = 5
+        Me.lblKeluar.Text = "Keluar"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(736, 558)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(716, 558)
+        Me.Controls.Add(Me.lblKeluar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblGrafik)
         Me.Controls.Add(Me.lblInput)
@@ -102,4 +115,5 @@ Partial Class Main
     Friend WithEvents lblInput As Label
     Friend WithEvents lblGrafik As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lblKeluar As Label
 End Class

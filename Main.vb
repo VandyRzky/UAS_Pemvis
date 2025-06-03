@@ -66,4 +66,8 @@ Public Class Main
     Private Sub lblGrafik_Click(sender As Object, e As EventArgs) Handles lblGrafik.Click
         TampilkanFormKePanel(GrafikKelulusan)
     End Sub
+
+    Private Sub lblKeluar_Click(sender As Object, e As EventArgs) Handles lblKeluar.Click
+        Me.Close()
+    End Sub
 End Class
